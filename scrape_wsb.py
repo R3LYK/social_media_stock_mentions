@@ -46,6 +46,7 @@ for submission in submissions:
                 cursor.execute("""INSERT INTO ticker_match (dt, stock_id, message, source, username, url)
                                 VALUES (%s, %s, %s, 'wallstreetbets',%s, %s)
                             """,(submission_time, stocks[cashtag], submission.title, submission.author, submission.url))
+                
                 connection.commit()
             except Exception as e:
                 print(e)
